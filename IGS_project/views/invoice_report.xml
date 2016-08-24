@@ -77,7 +77,12 @@
 						</p>
 					</div>
 				</div>
-
+				<div class="row">
+					<div name="reference" class="col-xs-2" t-if="o.reference">
+						<strong>Reference:</strong>
+						<p t-field="o.reference"/>
+					</div>
+				</div>
 			</xpath>
 
 
