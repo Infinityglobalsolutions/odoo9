@@ -43,9 +43,9 @@
 					</div>
 					<div class="col-xs-4 col-xs-offset-1">
 						<p>
-							Biz Reg No.
+							Biz Reg No.: 200916483Z
 							<br />
-							GST Reg No.
+							GST Reg No.: 200916483Z
 						</p>
 						<p>
 							<table>
@@ -119,9 +119,14 @@
 							<br />
 							Bank Remittance To
 							<br />
-							SGD#__________________
-							<br />
-							USD#__________________
+							<b>UOB BANK ACCOUNT (SGD)<br />
+							Account name: Infinity Global Solutions Pte Ltd<br />
+							Account number: 421-301-165-5</b>
+							<br /><br />
+							<b>DBS BANK ACCOUNT (USD)<br />
+							Account name: Infinity Global Solutions Pte Ltd<br />
+							Account number: 0003-007745-01-9-022 USD
+							</b>
 						</p>
 					</div>
 				</div>
