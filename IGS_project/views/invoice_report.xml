@@ -97,7 +97,8 @@
 			<xpath expr="//table[@class='table table-condensed']//thead//tr//th[6]"
 				position="replace">
 
-				<th class="text-right">Amount (SGD)</th>
+				<th t-if="o.currency_id.name != 'USD'" class="text-right">Amount (SGD)</th>
+				<th t-if="o.currency_id.name == 'USD'" class="text-right">Amount (USD)</th>
 
 			</xpath>
 			
@@ -115,7 +116,7 @@
 						<p>
 							cheque - please make your payment to
 							<br />
-							<b>Infinity Global Solutions Ptd. Ltd.</b>
+							<b>Infinity Global Solutions Pte. Ltd.</b>
 							<br />
 							Bank Remittance To
 							<br />
