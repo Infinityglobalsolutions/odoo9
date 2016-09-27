@@ -14,10 +14,10 @@ IGS Management module.
     'author': 'Win Mya Shwe Yi',
     'website': 'http://www.infinityglobals.com',
     'images': [],
-    'depends': [],
+    'depends': ['sale',],
     'data': [
         'views/invoice_report.xml', 'views/igs_external_header.xml',
-        'views/igs_external_footer.xml',
+        'views/igs_external_footer.xml', 'views/igs_sale_view.xml',
          ],
     'demo': [
     ],
