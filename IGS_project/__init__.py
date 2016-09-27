@@ -1,1 +1,1 @@
-import models
+import igs_models
