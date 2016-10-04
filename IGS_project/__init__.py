@@ -1,1 +1,2 @@
 import igs_models
+import igs_report_models

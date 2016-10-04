@@ -18,6 +18,7 @@ IGS Management module.
     'data': [
         'views/invoice_report.xml', 'views/igs_external_header.xml',
         'views/igs_external_footer.xml', 'views/igs_sale_view.xml',
+        'views/igs_payment_report.xml', 'IGS_project_report.xml',
          ],
     'demo': [
     ],

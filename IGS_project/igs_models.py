@@ -3,7 +3,7 @@ Created on Sep 26, 2016
 
 @author: user
 '''
-from openerp import  fields, models
+from openerp import models, fields, api, _
 
 class igs_sale_order(models.Model):
     _name = "sale.order"
@@ -17,4 +17,4 @@ class igs_accountInvoice(models.Model):
     
     date_invoice = fields.Date(string='Invoice Date',
         readonly=True, states={'draft': [('readonly', False)], 'open':[('readonly',False)]}, index=True,
-        help="Keep empty to use the current date", copy=False)
+        help="Keep empty to use the current date", copy=False)   
