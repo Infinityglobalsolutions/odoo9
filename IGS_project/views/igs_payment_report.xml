@@ -5,10 +5,13 @@
 	  <t t-call="report.external_layout">
 	   <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
         <div class="page">
+         <div class="row">
+         	<br />
+         	<br />
         	<h2>     
         		<span t-if="o.type == 'out_invoice' and (o.state == 'paid' or o.state == 'open')"> Receipt For Invoice -</span><span t-if="o.number"> <span t-field="o.number"/></span> 		
             </h2>
-                        
+         </div>               
             <table class="table">
                 <thead style= "border-top: 1px solid gray !important;">
                     <tr>
@@ -29,7 +32,7 @@
                         </td>
                         <td class="text-right">
                         	<t t-set="total_paid" t-value="o.amount_total - o.residual"></t>
-                            <span t-field="o.currency_id.symbol"/> <span t-esc=" '{0:,.2f}'.format(int(total_paid))"/>
+                            <span t-esc="'{0:,.2f}'.format(int(total_paid))"/> <span t-field="o.currency_id.symbol"/>
                         </td>
                       </tr>
                  </tbody>
@@ -73,8 +76,7 @@
               
         	
         </div>
-      </t>
-       
+      </t>       
 </template>
 
 <template id="report_payment">
