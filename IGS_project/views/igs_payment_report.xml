@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="report_payment_document">
+	  <t t-call="report.external_layout">
+	   <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
+        <div class="page">
+        	<h2>     
+        		<span t-if="o.type == 'out_invoice' and (o.state == 'paid' or o.state == 'open')"> Receipt For Invoice -</span><span t-if="o.number"> <span t-field="o.number"/></span> 		
+            </h2>
+                        
+            <table class="table">
+                <thead style= "border-top: 1px solid gray !important;">
+                    <tr>
+                        <th>Invoice Untaxed Amount</th>
+                        <th class="text-right">Invoice Tax</th>
+                        <th class="text-right">Invoice Total</th>
+                        <th class="text-right">Total Paid</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     <tr>
+                        <td><span t-field="o.amount_untaxed"/></td>
+                        <td class="text-right">
+                            <span t-field="o.amount_tax"/>                           
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.amount_total"/>
+                        </td>
+                        <td class="text-right">
+                        	<t t-set="total_paid" t-value="o.amount_total - o.residual"></t>
+                            <span t-field="o.currency_id.symbol"/> <span t-esc=" '{0:,.2f}'.format(int(total_paid))"/>
+                        </td>
+                      </tr>
+                 </tbody>
+              </table>
+              
+              <p> <h3>Payment:</h3></p>              
+              <table class="table">
+              	<thead style= "border-top: 1px solid black !important;">
+              		<tr>
+              			<th>Sr.No.</th>
+              			<th class="text-right">Payment Ref.</th>
+              			<th class="text-right">Payment Date</th>
+              			<th class="text-right">Method</th>
+              			<th class="text-right">Amount</th>             		
+              		</tr>   
+              	</thead>
+              	<tbody>
+              		<tr t-foreach="o.payment_ids" t-as="l">
+              			<td>
+              				<span t-esc="l_index + 1"/>
+              			</td>
+              			<td class="text-right">
+              				<span t-field="l.name"/>
+              			</td>
+              			<td class="text-right">
+              				<span t-field="l.payment_date"/>
+              			</td>
+              			<td class="text-right">
+              				<span t-field="l.journal_id.name"/>
+              			</td>
+              			<td class="text-right">
+              				<span t-field="l.amount"/>
+              			</td>
+              		</tr>
+              	</tbody>
+              
+              
+              
+              </table>
+              
+              
+        	
+        </div>
+      </t>
+       
+</template>
+
+<template id="report_payment">
+    <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="o">            
+            <t t-call="IGS_project.report_payment_document" t-lang="o.partner_id.lang"/>
+        </t>
+    </t>
+</template>
+
+</data>
+</openerp>
